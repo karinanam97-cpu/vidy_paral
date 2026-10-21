@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Тест: Параллелограмм и его виды</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background: linear-gradient(135deg, #fdf5e6 0%, #f5e6c8 100%);
+    color: #3a2a1a;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+  }
+  .container {
+    max-width: 850px;
+    margin: 0 auto;
+    background: #fffaf0;
+    border: 3px solid #c87a3e;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 8px 30px rgba(139, 58, 58, 0.2);
+  }
+  h1 {
+    text-align: center;
+    color: #8b3a3a;
+    font-size: 26px;
+    margin-bottom: 5px;
+  }
+  .subtitle {
+    text-align: center;
+    color: #c87a3e;
+    font-size: 15px;
+    margin-bottom: 25px;
+    font-style: italic;
+  }
+  .leaf-divider {
+    text-align: center;
+    color: #d97a22;
+    font-size: 20px;
+    margin: 20px 0;
+  }
+  .question {
+    background: #fffdf5;
+    border-left: 5px solid #f5c542;
+    border-radius: 8px;
+    padding: 18px 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(200, 122, 62, 0.1);
+    transition: all 0.3s;
+  }
+  .question h3 {
+    margin-top: 0;
+    color: #8b3a3a;
+    font-size: 16px;
+  }
+  label {
+    display: block;
+    padding: 10px 14px;
+    margin: 6px 0;
+    background: #fef9ec;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 15px;
+  }
+  label:hover {
+    background: #fdf0d5;
+    border-color: #f5c542;
+  }
+  input[type="radio"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+    accent-color: #c87a3e;
+  }
+  label.correct {
+    background: #d4edda;
+    border-color: #28a745;
+  }
+  label.wrong {
+    background: #f8d7da;
+    border-color: #dc3545;
+  }
+  .explanation {
+    display: none;
+    font-size: 14px;
+    color: #8b3a3a;
+    margin-top: 12px;
+    padding: 10px;
+    background: #fef9ec;
+    border-radius: 8px;
+    border-left: 3px solid #d97a22;
+    font-style: italic;
+  }
+  .buttons {
+    text-align: center;
+    margin-top: 30px;
+  }
+  button {
+    font-family: inherit;
+    font-size: 17px;
+    padding: 12px 35px;
+    margin: 8px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: bold;
+  }
+  .btn-check {
+    background: #c87a3e;
+    color: white;
+    box-shadow: 0 4px 12px rgba(200, 122, 62, 0.4);
+  }
+  .btn-check:hover {
+    background: #a8622c;
+    transform: translateY(-2px);
+  }
+  .btn-reset {
+    background: #f5c542;
+    color: #3a2a1a;
+    box-shadow: 0 4px 12px rgba(245, 197, 66, 0.4);
+  }
+  .btn-reset:hover {
+    background: #e0b02e;
+    transform: translateY(-2px);
+  }
+  #result {
+    display: none;
+    text-align: center;
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 12px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  #result.show { display: block; }
+  .excellent { background: #d4edda; color: #155724; border: 2px solid #28a745; }
+  .good { background: #fff3cd; color: #856404; border: 2px solid #ffc107; }
+  .satisfactory { background: #ffe5b4; color: #8b3a3a; border: 2px solid #d97a22; }
+  .bad { background: #f8d7da; color: #721c24; border: 2px solid #dc3545; }
+  .score-detail {
+    font-size: 15px;
+    font-weight: normal;
+    margin-top: 8px;
+  }
+  .footer {
+    text-align: center;
+    color: #c87a3e;
+    font-size: 13px;
+    margin-top: 25px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>🍁 ТЕСТ: ПАРАЛЛЕЛОГРАММ И ЕГО ВИДЫ 🍁</h1>
+  <p class="subtitle">Класс: 8 · Время: 15–20 минут · 10 вопросов</p>
+  <div class="leaf-divider">🍂 ─────────── 🍁 ─────────── 🍂</div>
+
+  <form id="quiz">
+    <!-- Вопрос 1 -->
+    <div class="question" data-q="1">
+      <h3>1. Параллелограмм — это четырёхугольник, у которого...</h3>
+      <label><input type="radio" name="q1" value="А"> А) все стороны равны</label>
+      <label><input type="radio" name="q1" value="Б"> Б) противоположные стороны попарно параллельны</label>
+      <label><input type="radio" name="q1" value="В"> В) две стороны параллельны, а две другие — нет</label>
+      <label><input type="radio" name="q1" value="Г"> Г) все углы прямые</label>
+      <div class="explanation">Определение параллелограмма: противоположные стороны попарно параллельны.</div>
+    </div>
+
+    <!-- Вопрос 2 -->
+    <div class="question" data-q="2">
+      <h3>2. Прямоугольник — это параллелограмм, у которого...</h3>
+      <label><input type="radio" name="q2" value="А"> А) все стороны равны</label>
+      <label><input type="radio" name="q2" value="Б"> Б) все углы прямые</label>
+      <label><input type="radio" name="q2" value="В"> В) диагонали перпендикулярны</label>
+      <label><input type="radio" name="q2" value="Г"> Г) одна сторона равна другой</label>
+      <div class="explanation">Прямоугольник — это параллелограмм с прямыми углами.</div>
+    </div>
+
+    <!-- Вопрос 3 -->
+    <div class="question" data-q="3">
+      <h3>3. Ромб — это параллелограмм, у которого...</h3>
+      <label><input type="radio" name="q3" value="А"> А) все углы прямые</label>
+      <label><input type="radio" name="q3" value="Б"> Б) все стороны равны</label>
+      <label><input type="radio" name="q3" value="В"> В) диагонали равны</label>
+      <label><input type="radio" name="q3" value="Г"> Г) противоположные углы равны</label>
+      <div class="explanation">Ромб — это параллелограмм с равными сторонами.</div>
+    </div>
+
+    <!-- Вопрос 4 -->
+    <div class="question" data-q="4">
+      <h3>4. Квадрат — это...</h3>
+      <label><input type="radio" name="q4" value="А"> А) параллелограмм с равными сторонами</label>
+      <label><input type="radio" name="q4" value="Б"> Б) прямоугольник с равными сторонами</label>
+      <label><input type="radio" name="q4" value="В"> В) ромб с прямыми углами</label>
+      <label><input type="radio" name="q4" value="Г"> Г) всё перечисленное верно</label>
+      <div class="explanation">Квадрат объединяет свойства прямоугольника и ромба.</div>
+    </div>
+
+    <!-- Вопрос 5 -->
+    <div class="question" data-q="5">
+      <h3>5. В параллелограмме ABCD угол A = 65°. Чему равен угол C?</h3>
+      <label><input type="radio" name="q5" value="А"> А) 65°</label>
+      <label><input type="radio" name="q5" value="Б"> Б) 115°</label>
+      <label><input type="radio" name="q5" value="В"> В) 25°</label>
+      <label><input type="radio" name="q5" value="Г"> Г) 130°</label>
+      <div class="explanation">Противоположные углы параллелограмма равны: ∠C = ∠A = 65°.</div>
+    </div>
+
+    <!-- Вопрос 6 -->
+    <div class="question" data-q="6">
+      <h3>6. Какое утверждение о диагоналях прямоугольника верно?</h3>
+      <label><input type="radio" name="q6" value="А"> А) Диагонали перпендикулярны</label>
+      <label><input type="radio" name="q6" value="Б"> Б) Диагонали равны</label>
+      <label><input type="radio" name="q6" value="В"> В) Диагонали делят углы пополам</label>
+      <label><input type="radio" name="q6" value="Г"> Г) Диагонали не пересекаются</label>
+      <div class="explanation">Диагонали прямоугольника равны.</div>
+    </div>
+
+    <!-- Вопрос 7 -->
+    <div class="question" data-q="7">
+      <h3>7. Какое утверждение о диагоналях ромба верно?</h3>
+      <label><input type="radio" name="q7" value="А"> А) Диагонали равны</label>
+      <label><input type="radio" name="q7" value="Б"> Б) Диагонали перпендикулярны</label>
+      <label><input type="radio" name="q7" value="В"> В) Диагонали параллельны сторонам</label>
+      <label><input type="radio" name="q7" value="Г"> Г) Диагонали не пересекаются</label>
+      <div class="explanation">Диагонали ромба перпендикулярны и делят углы пополам.</div>
+    </div>
+
+    <!-- Вопрос 8 -->
+    <div class="question" data-q="8">
+      <h3>8. В ромбе ABCD диагонали пересекаются в точке O. Чему равен угол AOB?</h3>
+      <label><input type="radio" name="q8" value="А"> А) 45°</label>
+      <label><input type="radio" name="q8" value="Б"> Б) 90°</label>
+      <label><input type="radio" name="q8" value="В"> В) 180°</label>
+      <label><input type="radio" name="q8" value="Г"> Г) 60°</label>
+      <div class="explanation">Диагонали ромба перпендикулярны, значит ∠AOB = 90°.</div>
+    </div>
+
+    <!-- Вопрос 9 -->
+    <div class="question" data-q="9">
+      <h3>9. В квадрате ABCD сторона равна 6 см. Найдите периметр квадрата.</h3>
+      <label><input type="radio" name="q9" value="А"> А) 24 см</label>
+      <label><input type="radio" name="q9" value="Б"> Б) 12 см</label>
+      <label><input type="radio" name="q9" value="В"> В) 36 см</label>
+      <label><input type="radio" name="q9" value="Г"> Г) 18 см</label>
+      <div class="explanation">Периметр квадрата: P = 4 · 6 = 24 см.</div>
+    </div>
+
+    <!-- Вопрос 10 -->
+    <div class="question" data-q="10">
+      <h3>10. В параллелограмме ABCD биссектриса угла A пересекает сторону BC в точке M. Каким является треугольник ABM?</h3>
+      <label><input type="radio" name="q10" value="А"> А) Прямоугольным</label>
+      <label><input type="radio" name="q10" value="Б"> Б) Равносторонним</label>
+      <label><input type="radio" name="q10" value="В"> В) Равнобедренным</label>
+      <label><input type="radio" name="q10" value="Г"> Г) Тупоугольным</label>
+      <div class="explanation">Биссектриса угла параллелограмма отсекает равнобедренный треугольник.</div>
+    </div>
+  </form>
+
+  <div class="buttons">
+    <button class="btn-check" onclick="checkAnswers()">✅ Проверить ответы</button>
+    <button class="btn-reset" onclick="resetQuiz()">🔄 Пройти заново</button>
+  </div>
+
+  <div id="result"></div>
+
+  <div class="footer">🍂 Удачи! Осень — время новых знаний 🍁</div>
+</div>
+
+<script>
+  const correctAnswers = {
+    q1: "Б",
+    q2: "Б",
+    q3: "Б",
+    q4: "Г",
+    q5: "А",
+    q6: "Б",
+    q7: "Б",
+    q8: "Б",
+    q9: "А",
+    q10: "В"
+  };
+
+  function checkAnswers() {
+    let score = 0;
+    let unanswered = 0;
+
+    for (let i = 1; i <= 10; i++) {
+      const qName = "q" + i;
+      const selected = document.querySelector(`input[name="${qName}"]:checked`);
+      const labels = document.querySelectorAll(`.question[data-q="${i}"] label`);
+      const expl = document.querySelector(`.question[data-q="${i}"] .explanation`);
+
+      // Сброс предыдущих классов
+      labels.forEach(l => l.classList.remove("correct", "wrong"));
+      if (expl) expl.style.display = "none";
+
+      if (!selected) {
+        unanswered++;
+        continue;
+      }
+
+      const userAnswer = selected.value;
+      const correct = correctAnswers[qName];
+
+      // Подсветка
+      labels.forEach(label => {
+        const input = label.querySelector("input");
+        if (input.value === correct) {
+          label.classList.add("correct");
+        } else if (input.checked && input.value !== correct) {
+          label.classList.add("wrong");
+        }
+      });
+
+      // Показ пояснения
+      if (expl) expl.style.display = "block";
+
+      if (userAnswer === correct) {
+        score++;
+      }
+    }
+
+    // Вывод результата
+    const resultDiv = document.getElementById("result");
+    let className, message, emoji;
+
+    if (score >= 9) {
+      className = "excellent";
+      emoji = "🌟";
+      message = "Отлично! Тема усвоена полностью.";
+    } else if (score >= 7) {
+      className = "good";
+      emoji = "👍";
+      message = "Хорошо! Есть небольшие пробелы.";
+    } else if (score >= 5) {
+      className = "satisfactory";
+      emoji = "🤔";
+      message = "Удовлетворительно. Нужно повторить свойства.";
+    } else {
+      className = "bad";
+      emoji = "🔴";
+      message = "Тревога. Начните с определений и чертежей.";
+    }
+
+    let detail = `Правильных ответов: ${score} из 10.`;
+    if (unanswered > 0) {
+      detail += ` Без ответа: ${unanswered}.`;
+    }
+
+    resultDiv.className = "show " + className;
+    resultDiv.innerHTML = `${emoji} ${message}<div class="score-detail">${detail}</div>`;
+    resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  function resetQuiz() {
+    document.getElementById("quiz").reset();
+    document.querySelectorAll(".question label").forEach(l => {
+      l.classList.remove("correct", "wrong");
+    });
+    document.querySelectorAll(".explanation").forEach(e => {
+      e.style.display = "none";
+    });
+    const resultDiv = document.getElementById("result");
+    resultDiv.className = "";
+    resultDiv.innerHTML = "";
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+</body>
+</html>
